@@ -2,7 +2,7 @@ FROM python:3-slim
 
 MAINTAINER Maik Hummel <m@ikhummel.com>
 
-ENV TAIGA_VERSION 1.10.0
+ENV TAIGA_VERSION 3.1.0
 
 WORKDIR /opt/
 

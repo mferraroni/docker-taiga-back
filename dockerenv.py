@@ -2,7 +2,7 @@ from .common import *
 
 DATABASES = {
    'default': {
-       'ENGINE': 'transaction_hooks.backends.postgresql_psycopg2',
+       'ENGINE': 'django.db.backends.postgresql',
        'NAME': '${DB_NAME}',
        'USER': '${DB_USER}',
        'PASSWORD': '${DB_PASS}',
@@ -37,7 +37,7 @@ EMAIL_HOST_PASSWORD = '${EMAIL_HOST_PASSWORD}'
 DEFAULT_FROM_EMAIL = '${DEFAULT_FROM_EMAIL}'
 
 DEBUG = ${DEBUG}
-TEMPLATE_DEBUG = ${TEMPLATE_DEBUG}
+#TEMPLATE_DEBUG = ${TEMPLATE_DEBUG}
 PUBLIC_REGISTER_ENABLED = ${PUBLIC_REGISTER_ENABLED}
 
 LANGUAGE_CODE = 'en-us'
