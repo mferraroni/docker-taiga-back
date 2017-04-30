@@ -17,7 +17,6 @@ RUN buildDeps='build-essential binutils-doc autoconf flex bison libjpeg-dev libf
     
     useradd -d `pwd` taiga && \
     mkdir -p media static logs taiga-back taiga && \
-    chmod a+x conf.env start && \
 
     curl -sL "https://api.github.com/repos/taigaio/taiga-back/tarball/${TAIGA_VERSION}" | tar xz -C taiga-back --strip-components=1 && \
     cd taiga-back && \

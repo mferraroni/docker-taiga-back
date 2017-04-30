@@ -7,4 +7,4 @@ script:
   - docker build -t taiga-back .
   - docker run --name postgres -e POSTGRES_USER=taiga -e POSTGRES_PASSWORD=Un1c0rn -e POSTGRES_NAME=taiga -d postgres
   - docker run --name taiback --link postgres -d taiga-back
-  - sleep 42 && docker exec taiback /bin/bash -c "apt-get update && apt-get install -y curl && curl localhost:8000"
+  - docker exec taiback /bin/bash -c "apt-get update && apt-get install -y curl && while [[ ! -f /var/lock/setup-done ]]; do echo 'Sleeping while database is being populated...'; sleep 1; done && curl localhost:8000"
