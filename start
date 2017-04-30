@@ -34,7 +34,6 @@ if [ ! -e $lockfile ]; then
    python manage.py collectstatic --noinput
 
    [[ $SAMPLE_DATA == 'True' ]] && python manage.py sample_data
-   touch /var/lock/setup-done
    # Don't remove the lockfile here to run initial DB setup only once
    trap - INT TERM EXIT
 fi
