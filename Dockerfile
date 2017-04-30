@@ -6,8 +6,6 @@ ENV TAIGA_VERSION 3.1.0
 
 WORKDIR /opt/
 
-COPY circus.ini conf.env start ./
-
 RUN buildDeps='build-essential binutils-doc autoconf flex bison libjpeg-dev libfreetype6-dev zlib1g-dev libgdbm-dev libncurses5-dev automake libtool libffi-dev curl git libpq-dev'; \
     set -x && \
     apt-get -qq update && \
@@ -30,6 +28,8 @@ RUN buildDeps='build-essential binutils-doc autoconf flex bison libjpeg-dev libf
     apt-get purge -y $buildDeps && \
     apt-get autoremove -y && \
     apt-get clean
+
+COPY circus.ini conf.env start ./
 
 COPY dockerenv.py taiga-back/settings/dockerenv.py
 
