@@ -32,7 +32,7 @@ COPY circus.ini conf.env start ./
 
 COPY dockerenv.py taiga-back/settings/dockerenv.py
 
-VOLUME /opt/media /opt/static /opt/logs
+VOLUME /usr/local/taiga/media /usr/local/taiga/static /usr/local/taiga/logs
 
 EXPOSE 8000
 
