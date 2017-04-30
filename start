@@ -22,7 +22,7 @@ fi
 cd .. # back to taiga-back
 
 ## Populate the database with initial basic data
-lockfile=/var/lock/taiga
+lockfile=/usr/local/taiga/logs/taiga-prod-lockfile
 if [ ! -e $lockfile ]; then
    trap "rm -f $lockfile; exit" INT TERM EXIT
    touch $lockfile
