@@ -11,7 +11,7 @@ DATABASES = {
    }
 }
 
-HOST = 'http://${HOSTNAME}/'
+HOST = '${HOST}/'
 
 MEDIA_ROOT = '/usr/local/taiga/media'
 MEDIA_URL = '${MEDIA_URL}'
